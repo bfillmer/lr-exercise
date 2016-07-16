@@ -1,8 +1,51 @@
 
 import React, { PropTypes } from 'react';
+import classNames from 'classnames';
+
+import {
+  removeStudent,
+} from './store';
+
+const TableRow = ({
+  action,
+  student,
+}) => {
+  const rowClasses = classNames({
+    'table-danger': student.score <= 65,
+  });
+
+  return (
+    <tr className = { rowClasses }>
+      <td>
+        <a className = "cursor-text">
+          { student.name }
+        </a>
+      </td>
+      <td className = "text-xs-center">
+        <a className = "cursor-text">
+          { student.score }
+        </a>
+      </td>
+      <td className = "text-xs-center">
+        <a
+          className = "cursor-pointer text-danger"
+          onClick = { () => action(removeStudent(student.index)) }
+        >
+          <i className = "fa fa-times-circle"></i>
+        </a>
+      </td>
+    </tr>
+  );
+};
+
+TableRow.propTypes = {
+  action: PropTypes.func.isRequired,
+  student: PropTypes.object.isRequired,
+};
 
 export const TestResults = ({
   students,
+  action,
 }) => (
   <table className = "table table-striped table-hover">
     <colgroup>
@@ -19,28 +62,13 @@ export const TestResults = ({
     </thead>
     <tbody>
       { students.map((s, k) => (
-        <tr key = { k }>
-          <td>
-            <a className = "cursor-text">
-              { s.name }
-            </a>
-          </td>
-          <td className = "text-xs-center">
-            <a className = "cursor-text">
-              { s.score }
-            </a>
-          </td>
-          <td className = "text-xs-center">
-            <a className = "cursor-pointer text-danger">
-              <i className = "fa fa-times-circle"></i>
-            </a>
-          </td>
-        </tr>
+        <TableRow key = { k } action = { action } student = { s } />
       )) }
     </tbody>
   </table>
 );
 
 TestResults.propTypes = {
+  action: PropTypes.func.isRequired,
   students: PropTypes.array.isRequired,
 };

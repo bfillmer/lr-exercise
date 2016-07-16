@@ -8,16 +8,20 @@ import { Tests } from 'screens/Tests/Tests';
 // store on mount and when the store changes.
 export class App extends Component {
   componentWillMount () {
+    const getState = this.props.store.getState;
+
     // Map redux dispatch as state.action.
     this.setState({
       action: this.props.store.dispatch,
     });
+
     // Map store data to state. Don't assume there is a boot state.
-    if (typeof this.props.store.getState() !== 'undefined') {
-      this.setState(this.props.store.getState());
+    if (typeof getState() !== 'undefined') {
+      this.setState(getState());
     }
+
     // Subscribe to store changes.
-    this.props.store.subscribe(s => this.setState(s));
+    this.props.store.subscribe(() => this.setState(getState()));
   }
 
   render () {
