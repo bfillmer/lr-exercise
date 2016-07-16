@@ -22,9 +22,7 @@ export class App extends Component {
 
   render () {
     return (
-      <div className = "container vspacer20">
-        <Tests { ...this.state } />
-      </div>
+      <Tests { ...this.state } />
     );
   }
 }
