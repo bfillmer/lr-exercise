@@ -3,3 +3,14 @@
 // ----------------------------------------------------------
 
 $fa-font-path: "~font-awesome/fonts";
+
+// Establish new colors for bootstrap.
+$brand-primary:             rgba(44, 87, 132, 1);
+$brand-success:             rgba(80, 138, 168, 1);
+$brand-info:                rgba(152, 193, 217, 1);
+$brand-warning:             rgba(252, 236, 201, 1);
+$brand-danger:              rgba(186, 18, 0, 1);
+
+$table-bg-hover: $brand-info;
+
+$card-border-radius: 0;

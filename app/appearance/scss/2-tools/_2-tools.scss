@@ -2,32 +2,10 @@
 // 2-TOOLS: globally available tools, public mixins, helper functions
 // ----------------------------------------------------------
 
-// EXAMPLES
-// ----------------------------------------------------------
-//
-// Z-Index Scale - Use these to keep consistent vertical "layers" in the application
-// Use sparingly and leverage native browser rendering as much as possible
-// $z-index1: 100;
-// $z-index2: 200;
-// $z-index3: 300;
-// $z-index4: 400;
-// $z-index5: 500;
-// $z-index6: 600;
-// $z-index7: 700;
-// $z-index8: 800;
-// $z-index9: 900;
-// $z-index10: 1000;
+.cursor-pointer {
+  cursor: pointer;
+}
 
-// Utilities
-// .pull-right {
-//   float: right;
-// }
-// .hide {
-//   display: none;
-// }
-// .clear-both {
-//   clear: both;
-// }
-// .overflow-hidden {
-//   overflow: hidden;
-// }
+.cursor-text {
+  cursor: text;
+}
