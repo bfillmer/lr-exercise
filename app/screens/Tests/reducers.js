@@ -1,11 +1,11 @@
 
-import { student } from 'stateModels';
+import { student } from 'common/stateModels';
 
 // Just an array of scores please.
 const getScores = (students) => students.map((s) => s.score);
 
 // Get the average from an array of scores.
-const scoreAverage = (scores) => scores.reduce((p, c) => (p + c)) / scores.length;
+const scoreAverage = (scores) => Math.round(scores.reduce((p, c) => (p + c)) / scores.length);
 
 // Max & Min using spread to apply over an array.
 const maxScore = (scores) => Math.max(...scores);
@@ -15,11 +15,11 @@ const minScore = (scores) => Math.min(...scores);
 export const calculatedStatistics = (state) => {
   const currentScores = getScores(state.students);
 
-  const {
+  const [
     currentAverage,
     currentMax,
     currentMin,
-  } = [
+  ] = [
     scoreAverage(currentScores),
     maxScore(currentScores),
     minScore(currentScores),

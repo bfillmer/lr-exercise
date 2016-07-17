@@ -28,7 +28,7 @@ const plugins = [
   // Reference: https://www.npmjs.com/package/html-webpack-plugin
   // Create our HTML on the fly.
   new HtmlWebpackPlugin({
-    title: 'React Boilerplate',
+    title: 'Classroom Test Score Management',
   }),
 ];
 

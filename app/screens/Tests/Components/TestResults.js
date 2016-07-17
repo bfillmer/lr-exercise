@@ -2,10 +2,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
-import {
-  removeStudent,
-} from 'screens/Tests/store';
-
 const TableRow = ({
   action,
   student,
@@ -29,7 +25,7 @@ const TableRow = ({
       <td className = "text-xs-center">
         <a
           className = "cursor-pointer text-danger"
-          onClick = { () => action(removeStudent(student.index)) }
+          onClick = { () => {} }
         >
           <i className = "fa fa-times-circle"></i>
         </a>
