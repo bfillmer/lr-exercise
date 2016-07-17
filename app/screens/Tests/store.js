@@ -2,8 +2,8 @@
 // Component Related Store Actions & Reducers
 
 // Remove a student.
-export const removeStudent = (index) => ({
-  type: 'REMOVE_STUDENT',
+export const removedStudent = (index) => ({
+  type: 'REMOVED_STUDENT',
   payload: {
     index,
   },

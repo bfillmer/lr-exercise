@@ -1,10 +1,5 @@
 
-// Generate a student object.
-export const student = (index, name, score) => ({
-  index,
-  name,
-  score,
-});
+import { student } from 'common/stateModels';
 
 // The most popular boy & girl names in America. Source: nameberry.com
 const defaultNames = [

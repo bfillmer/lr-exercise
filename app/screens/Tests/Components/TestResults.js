@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import {
   removeStudent,
-} from './store';
+} from 'screens/Tests/store';
 
 const TableRow = ({
   action,

@@ -1,9 +1,9 @@
 
 import React from 'react';
 
-import { AddTest } from './AddTest';
-import { Statistics } from './Statistics';
-import { TestResults } from './TestResults';
+import { AddTest } from './Components/AddTest';
+import { Statistics } from './Components/Statistics';
+import { TestResults } from './Components/TestResults';
 
 export const Tests = (props) => (
   <div className = "container m-t-3">
