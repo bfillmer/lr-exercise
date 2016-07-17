@@ -25,7 +25,12 @@ const TableRow = ({
       <td className = "text-xs-center">
         <a
           className = "cursor-pointer text-danger"
-          onClick = { () => {} }
+          onClick = { () => action({
+            type: 'REMOVE_STUDENT',
+            payload: {
+              index: student.index,
+            },
+          }) }
         >
           <i className = "fa fa-times-circle"></i>
         </a>

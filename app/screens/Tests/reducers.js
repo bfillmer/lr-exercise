@@ -12,6 +12,7 @@ const maxScore = (scores) => Math.max(...scores);
 const minScore = (scores) => Math.min(...scores);
 
 // CALCULATED_STATISTICS
+// @TODO If you remove all students this blows up because there is no data to calculate against.
 export const calculatedStatistics = (state) => {
   const currentScores = getScores(state.students);
 
@@ -34,7 +35,8 @@ export const calculatedStatistics = (state) => {
 
 // REMOVED_STUDENT
 export const removedStudent = (state, action) => {
-  if (!action.payload.index) return state;
+  // console.log('action', !action.payload.index);
+  if (typeof action.payload.index === 'undefined') return state;
   return Object.assign({}, state, {
     students: state.students.filter((s) => s.index !== action.payload.index),
   });

@@ -5,9 +5,16 @@ import createSagaMiddleware from 'redux-saga';
 
 import { testsReducers } from 'screens/Tests/Tests';
 
+// @TODO Not sure I like this for future expansion, works for now.
+import { removeStudent } from 'screens/Tests/sagas';
+
 const sagaMiddleware = createSagaMiddleware();
 
-// const reducer = (state = defaultState) => state;
+function* rootSaga () {
+  yield [
+    removeStudent(),
+  ];
+}
 
 const logger = createLogger();
 
@@ -21,4 +28,4 @@ store.dispatch({
   type: 'CALCULATED_STATISTICS',
 });
 
-// sagaMiddleware.run();
+sagaMiddleware.run(rootSaga);

@@ -1,7 +1,7 @@
 
 # Classroom Test Results Management Screen
 
-Basic coding exercise to create a screen for managing classroom test results.
+Basic coding exercise to create a screen for managing classroom test results. I've been wanting to use `redux-saga` for something to get a better understanding of it.
 
 ## Quick Start
 
