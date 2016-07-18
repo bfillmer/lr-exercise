@@ -6,13 +6,21 @@ import createSagaMiddleware from 'redux-saga';
 import { testsReducers } from 'screens/Tests/Tests';
 
 // @TODO Not sure I like this for future expansion, works for now.
-import { removeStudent } from 'screens/Tests/sagas';
+// @TODO Clean up this and set it up in the component itself. This store
+// should only get any and all sagas from other components and map them.
+import {
+  removeStudent,
+  addStudent,
+  updateStudent,
+} from 'screens/Tests/sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga () {
   yield [
     removeStudent(),
+    addStudent(),
+    updateStudent(),
   ];
 }
 

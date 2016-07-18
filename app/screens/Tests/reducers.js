@@ -1,5 +1,5 @@
 
-import { student } from 'common/stateModels';
+import { student } from './stateModels';
 
 // Just an array of scores please.
 const getScores = (students) => students.map((s) => s.score);
@@ -46,11 +46,11 @@ export const removedStudent = (state, action) => {
 export const addedStudent = (state, action) => {
   if (!action.payload.name && !action.payload.score) return state;
   return Object.assign({}, state, {
-    students: state.students.push(student(
+    students: [...state.students, student(
       state.students.length + 1,
       action.payload.name,
-      action.payload.score
-    )),
+      parseInt(action.payload.score, 10)
+    )],
   });
 };
 
