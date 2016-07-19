@@ -8,13 +8,13 @@ import { Statistics } from './Components/Statistics';
 import { TestResults } from './Components/TestResults';
 
 // Saga & Store Actions
+import { defaultStudents } from './defaultStudents';
 import {
   calculatedStatistics,
   removedStudent,
   addedStudent,
   updatedStudent,
 } from './reducers';
-import { defaultStudents } from './defaultStudents';
 
 const defaultState = {
   min: 0,

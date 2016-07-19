@@ -1,5 +1,5 @@
 
-import { student } from './stateModels';
+import { student } from './reducers';
 
 // The most popular boy & girl names in America. Source: nameberry.com
 const defaultNames = [
